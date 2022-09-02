@@ -8,12 +8,13 @@ document.getElementById("productOneQuantityDecrease").addEventListener('click', 
 
 
 function productOneQuantity( isIncrease ) {
-    let productOneQuantityNumber = parseInt( document.getElementById("productOneQuantityNumber").value );
+    let productOneQuantityField = document.getElementById("productOneQuantity");
+    let productOneQuantityNumber = parseInt( document.getElementById("productOneQuantity").value );
     if ( isIncrease ) {
-        document.getElementById("productOneQuantityNumber").value = productOneQuantityNumber + 1;
+        productOneQuantityField.value = productOneQuantityNumber + 1;
     } else {
         if ( productOneQuantityNumber > 0 ) {
-            document.getElementById("productOneQuantityNumber").value = productOneQuantityNumber - 1;
+            productOneQuantityField.value = productOneQuantityNumber - 1;
         }
     }
 }
