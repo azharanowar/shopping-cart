@@ -20,7 +20,7 @@ function productPriceUpdate( price, quantity, productPriceId ) {
     document.getElementById( productPriceId ).innerText = productTotalPrice;
     subtotalPriceUpdate();
     taxOfTotalPriceUpdate();
-    totalPriceUpdate()
+    totalPriceUpdate();
 }
 
 
@@ -45,3 +45,7 @@ function taxOfTotalPriceUpdate() {
 function totalPriceUpdate() {
     return document.getElementById("totalPrice").innerText = subtotalPriceUpdate() + taxOfTotalPriceUpdate();
 }
+
+subtotalPriceUpdate();
+taxOfTotalPriceUpdate();
+totalPriceUpdate();
