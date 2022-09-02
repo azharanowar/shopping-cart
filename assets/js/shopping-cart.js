@@ -1,20 +1,28 @@
 document.getElementById("productOneQuantityIncrease").addEventListener('click', function() {
-    const productOneCurrentQuantity = productOneQuantity( true );
-    productOnePriceUpdate( 1250, productOneCurrentQuantity );
+    const productQuantityFieldId = "productOneQuantity";
+    const productPriceId = "productOnePrice";
+    const productCurrentQuantity = productQuantityUpdate( true, productQuantityFieldId );
+    productPriceUpdate( 1250, productCurrentQuantity, productPriceId );
 });
 
 document.getElementById("productOneQuantityDecrease").addEventListener('click', function() {
-    const productOneCurrentQuantity = productOneQuantity(false);
-    productOnePriceUpdate( 1250, productOneCurrentQuantity );
+    const productQuantityFieldId = "productOneQuantity";
+    const productPriceId = "productOnePrice";
+    const productCurrentQuantity = productQuantityUpdate( false, productQuantityFieldId );
+    productPriceUpdate( 1250, productCurrentQuantity, productPriceId );
 });
 
 
 document.getElementById("productTwoQuantityIncrease").addEventListener('click', function() {
-    const productTwoCurrentQuantity = productTwoQuantity(true);
-    productTwoPriceUpdate( 50, productTwoCurrentQuantity );
+    const productQuantityFieldId = "productTwoQuantity";
+    const productPriceId = "productTwoPrice";
+    const productCurrentQuantity = productQuantityUpdate( true, productQuantityFieldId );
+    productPriceUpdate( 50, productCurrentQuantity, productPriceId );
 });
 
 document.getElementById("productTwoQuantityDecrease").addEventListener('click', function() {
-    const productTwoCurrentQuantity = productTwoQuantity(false);
-    productTwoPriceUpdate( 50, productTwoCurrentQuantity );
+    const productQuantityFieldId = "productTwoQuantity";
+    const productPriceId = "productTwoPrice";
+    const productCurrentQuantity = productQuantityUpdate( false, productQuantityFieldId );
+    productPriceUpdate( 50, productCurrentQuantity, productPriceId );
 });
