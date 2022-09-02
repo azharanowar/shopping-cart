@@ -9,23 +9,35 @@ document.getElementById("productOneQuantityDecrease").addEventListener('click', 
 });
 
 
-function productOneQuantity( isIncrease ) {
-    const productOneQuantityField = document.getElementById("productOneQuantity");
-    const productOnePreviusQuantity = parseInt( document.getElementById("productOneQuantity").value );
-    let productOneCurrentQuantity = productOnePreviusQuantity;
+document.getElementById("productTwoQuantityIncrease").addEventListener('click', function() {
+    const productTwoCurrentQuantity = productTwoQuantity(true);
+    productTwoPriceUpdate( 50, productTwoCurrentQuantity );
+});
+
+document.getElementById("productTwoQuantityDecrease").addEventListener('click', function() {
+    const productTwoCurrentQuantity = productTwoQuantity(false);
+    productTwoPriceUpdate( 50, productTwoCurrentQuantity );
+});
+
+
+function productTwoQuantity( isIncrease ) {
+    const productTwoQuantityField = document.getElementById("productTwoQuantity");
+    const productTwoPreviusQuantity = parseInt( productTwoQuantityField.value );
+    let productTwoCurrentQuantity = productTwoPreviusQuantity;
+
     if ( isIncrease ) {
-        productOneCurrentQuantity = productOnePreviusQuantity + 1;
+        productTwoCurrentQuantity = productTwoPreviusQuantity + 1;
     } else {
-        if ( productOnePreviusQuantity > 0 ) {
-            productOneCurrentQuantity = productOnePreviusQuantity - 1;
+        if ( productTwoPreviusQuantity > 0 ) {
+            productTwoCurrentQuantity = productTwoPreviusQuantity - 1;
         }
     }
 
-    return productOneQuantityField.value = productOneCurrentQuantity;
+    return productTwoQuantityField.value = productTwoCurrentQuantity; 
 }
 
 
-function productOnePriceUpdate(price, quantity ) {
+function productTwoPriceUpdate( price, quantity ) {
     const totalPrice = price * quantity;
-    document.getElementById("productOnePrice").innerText = totalPrice;
+    document.getElementById("productTwoPrice").innerText = totalPrice;
 }
