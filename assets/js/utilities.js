@@ -18,9 +18,7 @@ function productQuantityUpdate( isIncrease, productQuantityFieldId ) {
 function productPriceUpdate( price, quantity, productPriceId ) {
     const productTotalPrice = price * quantity;
     document.getElementById( productPriceId ).innerText = productTotalPrice;
-    subtotalPriceUpdate();
-    taxOfTotalPriceUpdate();
-    totalPriceUpdate();
+    updateEverythings();
 }
 
 
@@ -42,10 +40,23 @@ function taxOfTotalPriceUpdate() {
     return document.getElementById("totalTaxAmount").innerText = taxOfTotalPrice;
 }
 
+
 function totalPriceUpdate() {
     return document.getElementById("totalPrice").innerText = subtotalPriceUpdate() + taxOfTotalPriceUpdate();
 }
 
-subtotalPriceUpdate();
-taxOfTotalPriceUpdate();
-totalPriceUpdate();
+
+function removeProductById( productId ) {
+    const removeProductId = document.getElementById( productId );
+    removeProductId.parentNode.removeChild(removeProductId);
+    updateEverythings();
+}
+
+function updateEverythings() {
+    subtotalPriceUpdate();
+    taxOfTotalPriceUpdate();
+    totalPriceUpdate();
+}
+
+updateEverythings();
+

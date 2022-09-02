@@ -14,11 +14,7 @@ document.getElementById("productOneQuantityDecrease").addEventListener('click', 
 
 
 document.getElementById("removeProductOne").addEventListener('click', function() {
-    const productOne = document.getElementById("productOne");
-    productOne.parentNode.removeChild(productOne);
-    subtotalPriceUpdate();
-    taxOfTotalPriceUpdate();
-    totalPriceUpdate();
+    removeProductById( "productOne" );
 });
 
 
@@ -38,9 +34,5 @@ document.getElementById("productTwoQuantityDecrease").addEventListener('click', 
 
 
 document.getElementById("removeProductTwo").addEventListener('click', function() {
-    const productOne = document.getElementById("productTwo");
-    productOne.parentNode.removeChild(productOne);
-    subtotalPriceUpdate();
-    taxOfTotalPriceUpdate();
-    totalPriceUpdate();
+    removeProductById( "productTwo" );
 });
