@@ -16,6 +16,23 @@ function productQuantityUpdate( isIncrease, productQuantityFieldId ) {
 
 
 function productPriceUpdate( price, quantity, productPriceId ) {
-    const totalPrice = price * quantity;
-    document.getElementById( productPriceId ).innerText = totalPrice;
+    const productTotalPrice = price * quantity;
+    return document.getElementById( productPriceId ).innerText = productTotalPrice;
+}
+
+
+
+function subtotalPriceUpdate() {
+    let subtotalPrice = 0;
+    const productsPrice = document.getElementsByClassName("products-price");
+    for ( const productPrice of productsPrice ) {
+        subtotalPrice += parseFloat(productPrice.innerText);
+    }
+
+    return document.getElementById("subtotalPrice").innerText = subtotalPrice;
+}
+
+function taxOfTotalPrice() {
+    const subtotalPrice = subtotalPriceUpdate();
+    console.log( subtotalPrice )
 }
