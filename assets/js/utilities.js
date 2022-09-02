@@ -17,9 +17,11 @@ function productQuantityUpdate( isIncrease, productQuantityFieldId ) {
 
 function productPriceUpdate( price, quantity, productPriceId ) {
     const productTotalPrice = price * quantity;
-    return document.getElementById( productPriceId ).innerText = productTotalPrice;
+    document.getElementById( productPriceId ).innerText = productTotalPrice;
+    subtotalPriceUpdate();
+    taxOfTotalPriceUpdate();
+    totalPriceUpdate()
 }
-
 
 
 function subtotalPriceUpdate() {
@@ -32,7 +34,14 @@ function subtotalPriceUpdate() {
     return document.getElementById("subtotalPrice").innerText = subtotalPrice;
 }
 
-function taxOfTotalPrice() {
+
+function taxOfTotalPriceUpdate() {
     const subtotalPrice = subtotalPriceUpdate();
-    console.log( subtotalPrice )
+    const taxPercentage = 10;
+    const taxOfTotalPrice = subtotalPrice * taxPercentage / 100;
+    return document.getElementById("totalTaxAmount").innerText = taxOfTotalPrice;
+}
+
+function totalPriceUpdate() {
+    return document.getElementById("totalPrice").innerText = subtotalPriceUpdate() + taxOfTotalPriceUpdate();
 }

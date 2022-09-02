@@ -2,8 +2,7 @@ document.getElementById("productOneQuantityIncrease").addEventListener('click', 
     const productQuantityFieldId = "productOneQuantity";
     const productPriceId = "productOnePrice";
     const productCurrentQuantity = productQuantityUpdate( true, productQuantityFieldId );
-    const productTotalPrice = productPriceUpdate( 1250, productCurrentQuantity, productPriceId );
-    subtotalPriceUpdate();
+    productPriceUpdate( 1250, productCurrentQuantity, productPriceId );
 });
 
 document.getElementById("productOneQuantityDecrease").addEventListener('click', function() {
@@ -11,7 +10,6 @@ document.getElementById("productOneQuantityDecrease").addEventListener('click', 
     const productPriceId = "productOnePrice";
     const productCurrentQuantity = productQuantityUpdate( false, productQuantityFieldId );
     productPriceUpdate( 1250, productCurrentQuantity, productPriceId );
-    subtotalPriceUpdate();
 });
 
 
@@ -20,7 +18,6 @@ document.getElementById("productTwoQuantityIncrease").addEventListener('click', 
     const productPriceId = "productTwoPrice";
     const productCurrentQuantity = productQuantityUpdate( true, productQuantityFieldId );
     productPriceUpdate( 50, productCurrentQuantity, productPriceId );
-    subtotalPriceUpdate();
 });
 
 document.getElementById("productTwoQuantityDecrease").addEventListener('click', function() {
@@ -28,5 +25,4 @@ document.getElementById("productTwoQuantityDecrease").addEventListener('click', 
     const productPriceId = "productTwoPrice";
     const productCurrentQuantity = productQuantityUpdate( false, productQuantityFieldId );
     productPriceUpdate( 50, productCurrentQuantity, productPriceId );
-    subtotalPriceUpdate();
 });
